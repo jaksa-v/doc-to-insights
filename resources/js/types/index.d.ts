@@ -36,4 +36,10 @@ export interface User {
     updated_at: string;
 }
 
+export interface Document {
+    id: number;
+    name: string;
+    url: string;
+}
+
 export type BreadcrumbItemType = BreadcrumbItem;
