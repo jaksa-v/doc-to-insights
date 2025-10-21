@@ -41,6 +41,11 @@
 
         @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
         @inertiaHead
+
+        {{-- Umami Analytics --}}
+        @if(app()->environment('production') && env('UMAMI_WEBSITE_ID') && env('UMAMI_SCRIPT_URL'))
+            <script defer src="{{ env('UMAMI_SCRIPT_URL') }}" data-website-id="{{ env('UMAMI_WEBSITE_ID') }}"></script>
+        @endif
     </head>
     <body class="font-sans antialiased">
         @inertia
